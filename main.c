@@ -25,11 +25,20 @@
 void Welcome();
 void FixedCosts();
 void VariableCosts();
+void Calculate();
+void Display();
 
 // Global Variables Here
 float monthlyLoan;
 float monthlyInsurance;
 float yearlyTax;
+float gSum;
+float rSum;
+float pSum;
+float mSum;
+float lSum;
+float iSum;
+float total;
 
 float monthlyLoan = 0.0;
 float monthlyInsurance = 0.0;
@@ -46,6 +55,8 @@ int main()
     Welcome();
     FixedCosts();
     VariableCosts();
+    Calculate();
+    Display();
 
 
     return 0;
@@ -141,4 +152,42 @@ void VariableCosts()
             scanf("%f", &monthlyMisc[month]);
         }
     }
+}
+
+// This function will do all of the calculations required based on the data entered above.
+void Calculate() {
+
+    // This section will calculate the yearly cost for fixed costs.
+    // Tax calculations aren't needed since the total yearly amount was already asked above.
+    lSum = monthlyLoan * YEAR;
+    iSum = monthlyInsurance * YEAR;
+
+    // This for loop will calculate the totals for each variable cost array.
+    for (int month = 0; month < YEAR; month++) {
+        gSum += monthlyGas[month];
+        pSum += monthlyParking[month];
+        rSum += monthlyRepairs[month];
+        mSum += monthlyMisc[month];
+    }
+
+    // This will calculate the overall total.
+    total = yearlyTax + lSum + iSum + gSum + pSum + rSum + mSum;
+}
+
+// This function will display the final data to the user.
+void Display() {
+
+    // Fixed Cost Totals
+    printf("\nYou spent a total of $%.02f on your auto loan. \n", lSum);
+    printf("\nYou spent a total of $%.02f on auto insurance. \n", iSum);
+    printf("\nYou spent a total of $%.02f on tax. \n", yearlyTax);
+
+    // Variable Cost Totals
+    printf("\nYou spent a total of $%.02f on gas. \n", gSum);
+    printf("\nYou spent a total of $%.02f on parking. \n", pSum);
+    printf("\nYou spent a total of $%.02f on repairs. \n", rSum);
+    printf("\nYou spent a total of $%.02f on misc. \n", mSum);
+
+    // Yearly overall total
+    printf("\n\nYour yearly total for car ownership was: $%.02f\n", total);
 }
