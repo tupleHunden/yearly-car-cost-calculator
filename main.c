@@ -15,12 +15,6 @@
 // Defining the max number of months in a year.
 #define YEAR 12
 
-// Defining the max number of days in a month.
-#define MONTH 31
-
-// Defining the max number of days in a week.
-#define WEEK 7
-
 // Prototyping Functions Here
 void Welcome();
 void FixedCosts();
@@ -49,15 +43,14 @@ float monthlyParking[YEAR];
 float monthlyRepairs[YEAR];
 float monthlyMisc[YEAR];
 
-
 int main()
 {
+    // Functions in proper order.
     Welcome();
     FixedCosts();
     VariableCosts();
     Calculate();
     Display();
-
 
     return 0;
 }
