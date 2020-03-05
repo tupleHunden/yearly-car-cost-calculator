@@ -33,6 +33,7 @@ float mSum;
 float lSum;
 float iSum;
 float total;
+float average;
 
 float monthlyLoan = 0.0;
 float monthlyInsurance = 0.0;
@@ -165,6 +166,9 @@ void Calculate() {
 
     // This will calculate the overall total.
     total = yearlyTax + lSum + iSum + gSum + pSum + rSum + mSum;
+    
+    // This will calculate the average cost per month over the year.
+    average = total / YEAR;
 }
 
 // This function will display the final data to the user.
@@ -183,4 +187,5 @@ void Display() {
 
     // Yearly overall total
     printf("\n\nYour yearly total for car ownership was: $%.02f\n", total);
+    printf("Your average cost per month was: $%.02f\n", average);
 }
