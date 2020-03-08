@@ -1,6 +1,6 @@
 /**
  *      Developed by RJ Smith in March of 2020
- *      This is a simple C program to calculate the costs of car repairs over one month.
+ *      This is a simple program to calculate the costs of car ownership over one year, written in C.
  *
  *      You can reach me on the following platforms:
  *      Twitter @ tupleHunden
