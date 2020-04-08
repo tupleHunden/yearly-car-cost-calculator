@@ -89,8 +89,8 @@ void FixedCosts() {
         scanf("%f", &monthlyInsurance);
     }
 
-    // Prompt the user for the monthly tax cost for the car.
-    printf("How much do you pay each month for taxes on your car? \n$: ");
+    // Prompt the user for the yearly tax cost for the car.
+    printf("How much do you pay each year for taxes on your car? \n$: ");
     scanf("%f", &yearlyTax);
 
     // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
