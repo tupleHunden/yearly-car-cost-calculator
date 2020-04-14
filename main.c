@@ -66,14 +66,16 @@ void Welcome ()
 }
 
 // This function will collect the costs of services or goods that won't change month to month.
-void FixedCosts() {
+void FixedCosts() 
+{
 
     // Prompt the user for the monthly car payment cost.
     printf("How much do you pay each month for your car payment? \n$: ");
     scanf("%f", &monthlyLoan);
 
     // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-    while (monthlyLoan < 0) {
+    while (monthlyLoan < 0) 
+    {
         printf("Please enter a number 0 or higher. \n$: ");
         scanf("%f", &monthlyLoan);
     }
@@ -83,7 +85,8 @@ void FixedCosts() {
     scanf("%f", &monthlyInsurance);
 
     // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-    while (monthlyInsurance < 0) {
+    while (monthlyInsurance < 0) 
+    {
         printf("Please enter a number 0 or higher. \n$: ");
         scanf("%f", &monthlyInsurance);
     }
@@ -93,7 +96,8 @@ void FixedCosts() {
     scanf("%f", &yearlyTax);
 
     // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-    while (yearlyTax < 0) {
+    while (yearlyTax < 0) 
+    {
         printf("Please enter a number 0 or higher. \n$: ");
         scanf("%f", &yearlyTax);
     }
@@ -103,14 +107,16 @@ void FixedCosts() {
 void VariableCosts()
 {
     // For loop to collect the monthly costs that can change.
-    for (int month = 0; month < YEAR; month++) {
+    for (int month = 0; month < YEAR; month++) 
+    {
 
         // Prompt the user for monthly gas costs.
         printf("How much did you spend on gas for month %d? \n$: ", month + 1);
         scanf("%f", &monthlyGas[month]);
 
         // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-        while (monthlyGas[month] < 0) {
+        while (monthlyGas[month] < 0) 
+        {
             printf("Please enter a number 0 or higher. \n");
             scanf("%f", &monthlyGas[month]);
         }
@@ -120,7 +126,8 @@ void VariableCosts()
         scanf("%f", &monthlyParking[month]);
 
         // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-        while (monthlyParking[month] < 0) {
+        while (monthlyParking[month] < 0) 
+        {
             printf("Please enter a number 0 or higher. \n");
             scanf("%f", &monthlyParking[month]);
         }
@@ -130,7 +137,8 @@ void VariableCosts()
         scanf("%f", &monthlyRepairs[month]);
 
         // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-        while (monthlyRepairs[month] < 0) {
+        while (monthlyRepairs[month] < 0) 
+        {
             printf("Please enter a number 0 or higher. \n");
             scanf("%f", &monthlyRepairs[month]);
         }
@@ -140,7 +148,8 @@ void VariableCosts()
         scanf("%f", &monthlyMisc[month]);
 
         // Verify that the number was positive, if it was negative keep asking the user until a valid entry is made.
-        while (monthlyMisc[month] < 0) {
+        while (monthlyMisc[month] < 0) 
+        {
             printf("Please enter a number 0 or higher. \n");
             scanf("%f", &monthlyMisc[month]);
         }
@@ -148,7 +157,8 @@ void VariableCosts()
 }
 
 // This function will do all of the calculations required based on the data entered above.
-void Calculate() {
+void Calculate() 
+{
 
     // This section will calculate the yearly cost for fixed costs.
     // Tax calculations aren't needed since the total yearly amount was already asked above.
@@ -156,7 +166,8 @@ void Calculate() {
     iSum = monthlyInsurance * YEAR;
 
     // This for loop will calculate the totals for each variable cost array.
-    for (int month = 0; month < YEAR; month++) {
+    for (int month = 0; month < YEAR; month++) 
+    {
         gSum += monthlyGas[month];
         pSum += monthlyParking[month];
         rSum += monthlyRepairs[month];
@@ -171,7 +182,8 @@ void Calculate() {
 }
 
 // This function will display the final data to the user.
-void Display() {
+void Display() 
+{
 
     // Fixed Cost Totals
     printf("\nYou spent a total of $%.02f on your auto loan. \n", lSum);
